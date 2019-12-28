@@ -1,0 +1,13 @@
+﻿@model DTO
+
+@if (Model != null && Model.Path != null)
+{
+    <img src='~/files/@Model.Path' class="width100">
+    <br />
+    <a href="~/files/@Model.Path">Pobierz</a>
+}
+
+<form id="addForm" method="post" asp-action="Add" enctype="multipart/form-data">    
+    <input type="file" id="FileUpload1" asp-for="File" style="display: block" accept="image/*" />
+    <button type="submit">Dodaj</button>
+</form>
